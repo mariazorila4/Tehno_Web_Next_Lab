@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <script>
+        window.onload=()=>{
+            const bodyElement=document.body;
+
+            const bodyHoverEvent=new CustomEvent('bodyHovered', {
+                detail:{
+                    timestamp: new Date().toLocaleTimeString()
+                }
+            });
+
+            const handleMouseOver=()=>{
+                console.log('Mouse-ul este peste elementul body');
+
+                bodyElement.dispatchEvent(bodyHoverEvent);
+            };
+
+            const handleBodyHover=(event)=>{
+                console.log(`Evenimentul custom a avut loc la ora: ${event.detail.timestamp}`);
+            };
+
+            bodyElement.addEventListener("mouseover", handleMouseOver);
+
+            bodyElement.addEventListener("bodyHovered", handleBodyHover);
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplu eveniment custom</h1>
+    <p>Plimba mouse-ul peste orice zona a paginii pentru a declansa evenimentul.</p>
+    <p>Verifica consola browser-ului pentru a vedea mesajele.</p>
+</body>
+</html>

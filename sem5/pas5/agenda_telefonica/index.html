@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Contacte</title>
+    <style>
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        form {
+            margin-top: 20px;
+        }
+        form div {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 70px;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            var form = document.getElementById('contactForm');
+
+            var formSubmitHandler = (e) => {
+                
+                e.preventDefault();
+
+                var tableBody = document.getElementById('contactBody');
+
+                var numeTxt = document.getElementById('nume').value;
+                var telefonTxt = document.getElementById('telefon').value;
+
+                if (!numeTxt || !telefonTxt) {
+                    alert("Va rugam completati ambele campuri.");
+                    return; 
+                }
+
+                var newRow = document.createElement('tr');
+
+                newRow.innerHTML = `<td>${numeTxt}</td><td>${telefonTxt}</td>`;
+
+                tableBody.appendChild(newRow);
+
+                document.getElementById('nume').value = '';
+                document.getElementById('telefon').value = '';
+                document.getElementById('nume').focus(); 
+            }
+            
+            form.onsubmit = formSubmitHandler;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Agenda mea de Contacte</h1>
+
+    <table id="contactTable">
+        <thead>
+            <tr>
+                <th>Nume</th>
+                <th>Telefon</th>
+            </tr>
+        </thead>
+        <tbody id="contactBody">
+            </tbody>
+    </table>
+
+    <h2>Adauga un contact nou</h2>
+
+    <form id="contactForm">
+        <div>
+            <label for="nume">Nume:</label>
+            <input type="text" id="nume" />
+        </div>
+        <div>
+            <label for="telefon">Telefon:</label>
+            <input type="tel" id="telefon" />
+        </div>
+        <button type="submit" id="submitBtn">Adauga</button>
+    </form>
+</body>
+
+</html>

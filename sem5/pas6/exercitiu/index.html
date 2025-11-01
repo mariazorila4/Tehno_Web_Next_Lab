@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+
+<body>
+
+    <div>
+        <form onsubmit="event.preventDefault(); sendData();">
+            <input id="inputName" type="text" placeholder="Nume">
+            <br /> <br />
+            <input id="inputAge" type="number" placeholder="Varsta"> <br /> <br />
+            <input value="Adauga" type="submit"> <br /><br />
+        </form>
+    </div>
+
+    <hr>
+    <div>
+        <h3>Cautare dupa ID</h3>
+        <form onsubmit="event.preventDefault(); getDataById();">
+            <input id="inputId" type="number" placeholder="Introduceti ID-ul"> <br /><br />
+            <input value="Cauta" type="submit">
+        </form>
+        
+        <div id="resultData" style="margin-top: 15px; background-color: #f0f0f0; padding: 10px; border-radius: 5px;">
+        </div>
+    </div>
+    <hr>
+
+
+    <div id="tableData">
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="index.js"></script>
+
+</html>
