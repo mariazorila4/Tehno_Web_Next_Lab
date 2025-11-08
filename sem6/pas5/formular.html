@@ -1,0 +1,62 @@
+<html>
+<head>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form{
+            background-color: #f1f1f1;
+        }
+
+        .container{
+            padding: 16px;
+        }
+
+        input[type=text], select, textarea{
+            width: 100%;
+            display: inline-block;
+            margin: 8px 0px;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button{
+            background-color: #04aa6d;
+            color: #fff;
+            padding: 14px 20px;
+            margin: 8px 0px;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+        }
+
+        button:hover{
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Contact Form</h2>
+    <form action="javascript:" method="post">
+        <div class="container">
+            <label for="firstName"><b>First name:</b></label>
+            <input type="text" placeholder="Your name" name="firstName" required>
+            <label for="lastName"><b>Last name:</b></label>
+            <input type="text" placeholder="Your name" name="lastName" required>
+            <label for="country"><b>Country</b></label>
+            <select name="country" id="country">
+                <option value="romania">Romania</option>
+                <option value="hungary">Hungary</option>
+                <option value="france">France</option>
+                <option value="italy">Italy</option>
+            </select>
+            <label for="subject"><b>Subject</b></label>
+            <textarea name="subject" id="subject" rows="10" cols="30" placeholder="Write something.."></textarea>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

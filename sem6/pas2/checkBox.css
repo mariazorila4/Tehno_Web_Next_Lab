@@ -1,0 +1,43 @@
+body{
+    display: grid;
+    place-items: center;
+    min-height: 90vh;
+    background-color: aliceblue;
+}
+
+.control-container{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#red-check{
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    width: 1.4em;
+    height: 1.4em;
+    border: 2px solid #888;
+    border-radius: 4px;
+    background-color: blue;
+
+    transition: border-color 0.15s ease-in-out;
+
+    position: relative;
+    cursor: pointer;
+}
+
+#red-check:checked{
+    border-color: red;
+}
+
+#red-check:checked::after{
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+}

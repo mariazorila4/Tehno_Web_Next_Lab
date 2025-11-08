@@ -1,0 +1,39 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container{
+    width: 300px;
+    margin: 40px auto;
+}
+
+h1{
+    text-align: center;
+    margin-top: 0;
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.square{
+    float: left;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.top, .middle{
+    border-bottom: 3px solid black;
+}
+
+.left{
+    border-right: 3px solid black;
+}
+
+.top.middle, .middle.center, .bottom.center{
+    border-right: 3px solid black;
+}
