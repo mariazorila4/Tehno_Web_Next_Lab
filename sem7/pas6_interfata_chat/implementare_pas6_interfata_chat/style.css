@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 60px 1fr 60px;
+  height: 100%;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  border-right: 1px solid #ddd;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #ededed;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contacts {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+}
+
+.contact:hover {
+  background-color: #f0f0f0;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.contact-container .name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.contact-container .status {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.chat-heading {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-heading .interlocutor {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.chat {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.message {
+  margin-bottom: 15px;
+}
+
+.message .content {
+  font-size: 16px;
+}
+
+.message .time {
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.chat-input {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.chat-input input[type="button"] {
+  padding: 10px 20px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 80px 1fr;
+  }
+  .contact-container {
+    display: none;
+  }
+  .sidebar {
+    align-items: center;
+  }
+  .avatar {
+    margin-right: 0;
+  }
+}
